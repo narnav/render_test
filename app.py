@@ -1,11 +1,12 @@
+import json
 from flask import Flask
 app = Flask(__name__)
 
-ar=[{"name":"betty","age":20}]
+ar=[{"name":"betty","age":20},{"name":"alex","age":21},{"name":"shadi","age":15}]
 
 @app.route('/')
 def hello():
-    return f'Hello, World!{ar[0]}'
+    return json.dumps( ar)
  
  
 if __name__ == '__main__':
